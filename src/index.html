@@ -4,7 +4,107 @@
   <meta charset="utf-8">
   <title>Pi Ninja</title>
   <link rel="icon" href="favicon.png" />
+</head>
+<body>
+  <main>
+    <p id="pi">&pi; &asymp; <span id="locked"></span><span id="changing"></span><br>in <span id="iterations"></span> iterations.</p>
+  </main>
+  <footer><p>&pi; > &tau;</p></footer>
+<script id="jsbin-javascript">
+var pi = 4;
+var sub = true;
+var denominateur = 1;
+var limit = {max:5,min:0};
+var lockedIn = 0;
+var maxTurn = 0;
+
+advanceSerie = function(){
+  maxTurn = Math.pow(lockedIn,3);
+  if(maxTurn % 2 === 0){
+   maxTurn++;
+  }
+  for(i=0;i<maxTurn;i++){
+    denominateur = denominateur + 2;
+    if(sub === true){
+      pi = pi - (4 / denominateur);
+      sub = false;
+    }
+    else{
+      pi = pi + (4 / denominateur);
+      sub = true;
+    }
+  }
+  //generate min/max value
+  if(sub === true){
+    limit.max = pi;
+  }
+  else{
+    limit.min = pi;
+  }
+  if(limit.min.toString().substring(0,lockedIn) === limit.max.toString().substring(0,lockedIn)){
+	lockedIn++;
+  }
+  
+  document.getElementById("locked").innerHTML = pi.toString().substring(0,lockedIn-1);
+  document.getElementById("changing").innerHTML = pi.toString().substring(lockedIn-1);
+  document.getElementById("iterations").innerHTML = Number(document.getElementById("iterations").innerHTML) + maxTurn;
+  //stop at 3.14159
+  if(lockedIn < 8){
+    window.requestAnimationFrame(advanceSerie);
+  }
+}
+
+window.requestAnimationFrame(advanceSerie);
+</script>
 <style>
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 body {
   background-color:black;
   height:100vh;
@@ -15,13 +115,28 @@ body {
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center center;
+  color:white;
+  min-height:100vh;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns:auto 1fr auto;
+  grid-template-rows:auto 1fr auto;
+  grid-template-areas:
+    "main .... ...."
+    ".... ..... ...."
+    ". . footer";
+}
+body > nav {
+  grid-area: nav;
+}
+body > main {
+  grid-area: main;
+}
+body > footer {
+  grid-area: footer;
 }
 
+#locked{color:red}
 </style>
-</head>
-<body>
-<script>
-
-</script>
 </body>
 </html>
