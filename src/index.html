@@ -6,6 +6,7 @@
   <link rel="icon" href="favicon.png" />
 </head>
 <body>
+	<p class="error">Your browser doesn't support CSS grid, this website might not be displayed properly</p>
   <main>
     <p id="pi">&pi; &asymp; <span id="locked"></span><span id="changing"></span><br>in <span id="iterations"></span> iterations.</p>
   </main>
@@ -126,6 +127,18 @@ body {
     ".... ..... ...."
     ". . footer";
 }
+body > p.error{
+	background-color:red;
+	color:white;
+	padding:15px;
+	margin:15px;
+	text-align:center;
+	}
+	@supports (display:grid){
+		body > p.error{
+		display:none;
+		}
+	}
 body > nav {
   grid-area: nav;
 }
