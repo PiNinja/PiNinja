@@ -2,8 +2,8 @@ version: "2"
 
 services:
   pininja:
-    image: nginx
-    container_name: pininja-nginx
+    build: .
+    container_name: pininja-gatsby
     restart: always
     volumes:
       - "./src:/usr/share/nginx/html"
