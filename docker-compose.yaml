@@ -9,10 +9,10 @@ services:
       - "./src:/usr/share/nginx/html"
       - "./nginx.conf:/etc/nginx/conf.d/default.conf"
     environment:
-      - VIRTUAL_HOST=3.14159.ninja
+      - VIRTUAL_HOST=3.14159.ninja,arthurdev.duckdns.org
       - VIRTUAL_NETWORK=nginx-proxy
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=3.14159.ninja
+      - LETSENCRYPT_HOST=3.14159.ninja,arthurdev.duckdns.org
       - LETSENCRYPT_EMAIL=arthur.juchereau@gmail.com
 networks:
   default:
