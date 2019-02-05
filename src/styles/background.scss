@@ -1,0 +1,111 @@
+body{
+    background-color:black;
+    color:white;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-size:6vw;
+    font-family:sans-serif;
+
+    @media screen and (min-width: 1080px) {
+        font-size:1.5vw;
+    }
+
+    #background{
+        color:#303030;
+        display:flex;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        flex-wrap:wrap;
+        overflow:hidden;
+        div {
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard syntax */
+            flex:0 0 10vw;
+            height:10vw;
+            @media screen and (min-width: 1080px) {
+              flex:0 0 2.5vw;
+              height:2.5vw;
+            }
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            box-sizing:border-box;
+            p{
+                margin:0;
+            }
+        }
+        div:nth-child(-n+6){
+            cursor:pointer;
+            color:red;
+            font-weight:bold;
+        }
+        div.square {
+            border-right:1px solid #303030;
+            border-bottom:1px solid #303030;
+        }
+        div.square:nth-child(-n+6){
+            border-right:1px solid red;
+            border-bottom:1px solid red;
+        }
+        div.round {
+            border-radius:100%;
+            border-right:2px solid #303030;
+            border-bottom:2px solid #303030;
+        }
+        div.round:nth-child(-n+6){
+            border-right:2px solid red;
+            border-bottom:2px solid red;
+        }
+        div.Krzywinski {
+            p{
+                background-color:#303030;
+                content:'';
+                width:50%;
+                height:50%;
+                overflow:hidden;
+                border-radius:100%;
+            }
+            p.digit1{
+                border:4px solid #f5ec2b;
+            }
+            p.digit2{
+                border:4px solid #8dc53a;
+            }
+            p.digit3{
+                border:4px solid #37b347;
+            }
+            p.digit4{
+                border:4px solid #00abee;
+            }
+            p.digit5{
+                border:4px solid #283891;
+            }
+            p.digit6{
+                border:4px solid #92278b;
+            }
+            p.digit7{
+                border:4px solid #ed2079;
+            }
+            p.digit8{
+                border:4px solid #ed3e36;
+            }
+            p.digit9{
+                border:4px solid #f76321;
+            }
+            p.digit0{
+                border:4px solid #ffb73b;
+            }
+        }
+        div.Krzywinski:nth-child(-n+6){
+            p{
+                background-color:red;
+            }
+        }
+    }
+}
