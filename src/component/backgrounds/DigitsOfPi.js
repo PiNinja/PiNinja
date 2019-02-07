@@ -4,9 +4,6 @@ import "../../styles/background.scss"
 
 const cycleVisualization = (current) =>{
     if(current === 'square'){
-        return 'round'
-    }
-    else if(current === 'round'){
         return 'Krzywinski'
     }
     else if(current === 'Krzywinski'){
@@ -23,9 +20,9 @@ const DigitsOfPi = (props) => {
     const mainDigits = ['3.',1,4,1,5,9]
     
     return(
-        <section id="background">
-            {mainDigits.map((d,i)=>(<div className={visualization} key={'MainDigit'+i} onClick={()=>setVisualization(cycleVisualization(visualization))}><p className={`digit${parseInt(d)}`}>{d}</p></div>))}
-            {digits.split("").map((d,i)=>(<div className={visualization} key={'Digit'+i}><p className={`digit${parseInt(d)}`}>{d}</p></div>))}
+        <section id="background" className={visualization}>
+            {mainDigits.map((d,i)=>(<div key={'MainDigit'+i} onClick={()=>setVisualization(cycleVisualization(visualization))}><p className={`digit${parseInt(d)}`}>{d}</p></div>))}
+            {digits.split("").map((d,i)=>(<div key={'Digit'+i}><p className={`digit${parseInt(d)}`}>{d}</p></div>))}
         </section>
     )
     
