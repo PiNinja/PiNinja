@@ -1,0 +1,36 @@
+@import 'defaults';
+
+#___gatsby > div > main.multiple {
+    > article {
+        @extend .wrapped-center;
+        background-color:rgba(0,0,0,0.5);
+        padding:3rem;
+        @media screen and (min-width: 1080px){
+            margin-top:5vw;
+        }
+        > h1, h2, p {
+            @media screen and (max-width: 2160px){
+                text-align: center;
+            }
+        }
+        > p, h2,ul {
+            margin-top:2rem;
+        }
+        ul{
+
+            list-style-type: none;
+            display:flex;
+            li{
+                margin-right:1rem;
+                font-weight: bold;
+                &.lot{
+                    color:white;
+                }
+                &.light{
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+  
+}

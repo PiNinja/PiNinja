@@ -22,7 +22,7 @@ body{
         text-decoration: none;
     }
     #___gatsby > div {
-        > main {
+        > main.bloc {
             @extend .wrapped-center;
             background-color:rgba(0,0,0,0.5);
             padding:3rem;
