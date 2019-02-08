@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 import loadVizualization, {cycleVisualization} from "../../helpers/visualization"
@@ -12,6 +12,11 @@ const Header = () => {
     console.log(loadedVisualization)
     const [expand,setExpand] = useState(false)
     let [visualization, setVisualization] =  useState(loadedVisualization)
+
+    useEffect(()=>{
+        setVisualization(loadVizualization)
+    }, {})
+
     const mainDigits = ['3.',1,4,1,5,9]
     
     return (
