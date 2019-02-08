@@ -1,24 +1,14 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+
+import loadVizualization, {cycleVisualization} from "../../helpers/visualization"
+
 import '../../styles/header.scss'
 import "../../styles/background.scss"
 
-const isBrowser = typeof window !== 'undefined';
 
-const cycleVisualization = (current) =>{
-    if(current === 'square'){
-        window.localStorage.setItem('visualization', 'Krzywinski');
-        return 'Krzywinski'
-    }
-    else if(current === 'Krzywinski'){
-        window.localStorage.setItem('visualization', 'square');
-        return 'square'
-    }
-    return 'square'
-}
-
-const Header = (props) => {
-    let loadedVisualization = isBrowser? window.localStorage.getItem('visualization') || 'square' : 'square'
+const Header = () => {
+    const loadedVisualization = loadVizualization();
     console.log(loadedVisualization)
     const [expand,setExpand] = useState(false)
     let [visualization, setVisualization] =  useState(loadedVisualization)
