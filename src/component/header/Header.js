@@ -19,6 +19,7 @@ const cycleVisualization = (current) =>{
 
 const Header = (props) => {
     const loadedVisualization = isBrowser? window.localStorage.getItem('visualization') || 'square' : 'square'
+    console.log(loadedVisualization)
     const [expand,setExpand] = useState(false)
     const [visualization, setVisualization] =  useState(loadedVisualization)
     const mainDigits = ['3.',1,4,1,5,9]
