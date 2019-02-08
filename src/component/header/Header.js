@@ -19,6 +19,7 @@ const Header = () => {
         <>
             {isBrowser && <section id="background" className={visualization}></section>}
             <header>
+                {!isBrowser && <p/>}
                 {isBrowser && <section className={visualization}>
                 {mainDigits.map((d,i)=>(<div key={'MainDigit'+i} onClick={()=>setVisualization(cycleVisualization(visualization))}><p className={`digit${parseInt(d)}`}>{d}</p></div>))}
                 </section>}
