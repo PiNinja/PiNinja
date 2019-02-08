@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import '../../styles/header.scss'
 import "../../styles/background.scss"
 
+const isBrowser = typeof window !== 'undefined';
+
 const cycleVisualization = (current) =>{
     if(current === 'square'){
         window.localStorage.setItem('visualization', 'Krzywinski');
@@ -16,7 +18,7 @@ const cycleVisualization = (current) =>{
 }
 
 const Header = (props) => {
-    const loadedVisualization = window? window.localStorage.getItem('visualization') || 'square' : 'square'
+    const loadedVisualization = !!window? window.localStorage.getItem('visualization') || 'square' : 'square'
     const [expand,setExpand] = useState(false)
     const [visualization, setVisualization] =  useState(loadedVisualization)
     const mainDigits = ['3.',1,4,1,5,9]
