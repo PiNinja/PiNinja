@@ -8,7 +8,9 @@ const Layout = (props) => (
     <>
         <SEO />
         <Header/>
-        {props.children}
+        <main>
+            {props.children}
+        </main>
     </>
 )
 

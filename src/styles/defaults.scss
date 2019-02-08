@@ -4,3 +4,16 @@
     -ms-user-select: none; /* IE 10+ */
     user-select: none; /* Standard syntax */
 }
+
+.wrapped-center{
+    margin:0 auto;
+    width: 100%;
+    padding:0 1rem;
+    @media screen and (min-width: 1080px){
+        max-width: 960px;
+    }
+    @media screen and (min-width: 2160px){
+        max-width: 1500px;
+    }
+
+}

@@ -7,8 +7,8 @@
     background-color: black;
     background-position: top center;
     background-size: 100%;
-    background-repeat:repeat-y
-
+    background-repeat:repeat-y;
+    z-index:-1;
 }
 #background.Krzywinski{
     background-image: url('/backgrounds/phone-Krzywinski.png');

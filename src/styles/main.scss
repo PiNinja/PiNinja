@@ -1,5 +1,12 @@
+@import 'defaults';
+
 * {
     box-sizing:border-box;
+}
+
+ul,p,h1,h2,h3,h4,h5 {
+    margin:0;
+    padding:0;
 }
 
 body{
@@ -10,13 +17,27 @@ body{
     box-sizing:border-box;
     font-family:sans-serif;
 
-    a {
+    a,strong {
         color:white;
         text-decoration: none;
-
     }
     #___gatsby > div {
-
+        > main {
+            @extend .wrapped-center;
+            background-color:rgba(0,0,0,0.5);
+            padding:3rem;
+            @media screen and (min-width: 1080px){
+                margin-top:5vw;
+            }
+            > h1, h2, p {
+                @media screen and (max-width: 1080px){
+                    text-align: center;
+                }
+            }
+            > p, h2 {
+                margin-top:2rem;
+            }
+        }
       
     }
     

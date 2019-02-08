@@ -118,5 +118,40 @@
             }
         }
     }
+    > aside {
+        position:fixed;
+        top:0;
+        left:100%;
+        height:100%;
+        width:80%;
+        z-index:999;
+        background-color:black;
+        border-left:1px solid #c0c0c0;
+        opacity:0;
+        transition:opacity 400ms, left 400ms;
+        &.expanded{
+            opacity:1;
+            left:20%;
+        }
+
+        #burger-menu{
+            @extend .no-user-select;
+            padding:1rem 2rem;
+            width:10vw;
+            font-size:9vw;
+            text-align: center;
+            cursor:pointer;
+        }
+
+        ul{
+            margin:0;
+            padding:0;
+            list-style-type: none;
+            li{
+                padding:1rem 2rem;
+                font-size:5vw;
+            }
+        }
+    }
 
 }

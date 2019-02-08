@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import '../../styles/header.scss'
 import "../../styles/background.scss"
 
@@ -28,17 +29,18 @@ const Header = (props) => {
                 <div id="burger" onClick={()=>setExpand(!expand)}>=</div>
                 <nav>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                        <li><a href="/tech">Technologies</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/projects">Projects</Link></li>
+                        <li><Link to="/tech">Technologies</Link></li>
                     </ul>
                 </nav>
             </header>
             <aside className={expand?"expanded":undefined}>
+                <div id="burger-menu" onClick={()=>setExpand(!expand)}>=</div>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/projects">Projects</a></li>
-                    <li><a href="/tech">Technologies</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/projects">Projects</Link></li>
+                    <li><Link to="/tech">Technologies</Link></li>
                 </ul>
             </aside>
         </>
