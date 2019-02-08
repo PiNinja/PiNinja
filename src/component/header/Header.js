@@ -5,18 +5,20 @@ import "../../styles/background.scss"
 
 const cycleVisualization = (current) =>{
     if(current === 'square'){
+        localStorage.setItem('visualization', 'Krzywinski');
         return 'Krzywinski'
     }
     else if(current === 'Krzywinski'){
+        localStorage.setItem('visualization', 'square');
         return 'square'
     }
     return 'square'
 }
 
 const Header = (props) => {
-
+    const loadedVisualization = localStorage.getItem('visualization') || 'square'
     const [expand,setExpand] = useState(false)
-    const [visualization, setVisualization] =  useState('square')
+    const [visualization, setVisualization] =  useState(loadedVisualization)
     const mainDigits = ['3.',1,4,1,5,9]
     
     return (
