@@ -14,14 +14,15 @@ const Header = () => {
     let [visualization, setVisualization] =  useState(loadedVisualization)
 
     useEffect(()=>{
-        setVisualization(loadVizualization)
+        console.log("moving to ",loadVizualization())
+        setVisualization(loadVizualization())
     }, {})
 
     const mainDigits = ['3.',1,4,1,5,9]
     
     return (
         <>
-            <section id="background" className={visualization}></section>
+            <section id="background" className={loadVizualization()}></section>
             <header>
                 <section className={visualization}>
                 {mainDigits.map((d,i)=>(<div key={'MainDigit'+i} onClick={()=>setVisualization(cycleVisualization(visualization))}><p className={`digit${parseInt(d)}`}>{d}</p></div>))}
