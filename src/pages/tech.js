@@ -37,7 +37,6 @@ export default () => (
                     <li className="ko">Custom functions</li>
                     <li className="ko">NPM package</li>
                     <li className="ko">tests</li>
-
                 </ul>
             </article>
         </main>
