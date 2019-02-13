@@ -6,10 +6,10 @@ Made using gatsby
 
 ## install
 
-`sh
+```sh
 git clone git@github.com:PiNinja/PiNinja.git
 npm install
-`
+```
 
 ## develop
 
