@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from '../layouts/layout'
 
+import '../styles/projects.scss'
+
 export default () => (
     <Layout>
         <main className="multiple">
